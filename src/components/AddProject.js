@@ -8,7 +8,7 @@ export const AddProject = ({ shouldShow = false }) => {
   const [projectName, setProjectName] = useState("");
 
   const projectId = generatePushId();
-  const { setProjects } = useProjectsValue();
+  const { projects, setProjects } = useProjectsValue();
 
   const addProject = () => {
     projectName &&
@@ -21,14 +21,14 @@ export const AddProject = ({ shouldShow = false }) => {
           userId: "asdfghjkl",
         })
         .then(() => {
-          setProjects([]);
+          setProjects([...projects]);
           setProjectName("");
           setShow(false);
         });
   };
 
   return (
-    <div className="add-project" data-testId="add-project">
+    <div className="add-project" data-testid="add-project">
       {show && (
         <div className="add-project_input">
           <input
@@ -36,7 +36,7 @@ export const AddProject = ({ shouldShow = false }) => {
             onChange={(e) => setProjectName(e.target.value)}
             className="add-project_name"
             type="text"
-            data-testId="project-name"
+            data-testid="project-name"
             placeholder="Name your project"
           ></input>
           <button
@@ -44,21 +44,24 @@ export const AddProject = ({ shouldShow = false }) => {
             type="button"
             onClick={() => addProject()}
           >
-            Add Button
+            Add
           </button>
           <span
-            data-testId="hide-project-overlay"
+            data-testd="hide-project-overlay"
             className="add-project_cancel"
             onClick={() => setShow(false)}
+            onKeyDown={() => setShow(!show)}
+            role="button"
+            tabIndex={0}
           >
             Cancel
           </span>
         </div>
       )}
-      <span className="add-project-action">+</span>
-      <span className="add-project_text" onClick={() => setShow(!show)}>
-        Add Project
-      </span>
+      <div onClick={() => setShow(!show)}>
+        <span className="add-project-action">+</span>
+        <span className="add-project_text">Add Project</span>
+      </div>
     </div>
   );
 };

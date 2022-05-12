@@ -25,7 +25,6 @@ export const Tasks = () => {
   useEffect(() => {
     document.title = `${projectName}`;
   }, [projectName]);
-  console.log("tasks", tasks);
 
   return (
     <div className="tasks" data-testid="tasks">

@@ -222,6 +222,7 @@ header {
               @include transparent-button();
               color: white;
               cursor: pointer;
+              font-size: 1em;
             }
           }
 
@@ -274,18 +275,18 @@ header {
   &_project {
     cursor: pointer;
 
-    // div:nth-child(1) {
-    // padding: 5px 0;
-    // padding-left: 10px;
-    // padding-right: 15px;
-    // // width: 100%;
-    // display: -webkit-box;
-    // display: -ms-flexbox;
-    // display: flex;
-    // -webkit-box-align: center;
-    // -ms-flex-align: center;
-    // align-items: center;
-    // }
+    div:nth-child(1) {
+      padding: 5px 0;
+      padding-left: 10px;
+      padding-right: 15px;
+      // width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
 
     &-delete {
       margin-left: auto;
@@ -344,7 +345,7 @@ header {
 
   &_middle {
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -651,25 +652,25 @@ header {
 
   &_list li {
     @include task-item();
-    padding: 0;
+    // padding: 0;
 
-    div:nth-child(1) {
-      padding: 10px;
-      width: 100%;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
+    // div:nth-child(1) {
+    //   padding: 10px;
+    //   width: 100%;
+    //   display: -webkit-box;
+    //   display: -ms-flexbox;
+    //   display: flex;
+    //   -webkit-box-align: center;
+    //   -ms-flex-align: center;
+    //   align-items: center;
 
-      span:first-of-type {
-        margin-right: 10px;
+    span:first-of-type {
+      margin-right: 10px;
 
-        svg {
-          fill: grey;
-        }
+      svg {
+        fill: grey;
       }
+      // }
     }
   }
 }
@@ -687,7 +688,7 @@ header {
 
   &_list li {
     @include task-item();
-    padding: 0;
+    // padding: 0;
 
     div:nth-child(1) {
       width: 100%;

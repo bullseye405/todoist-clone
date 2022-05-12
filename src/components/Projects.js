@@ -29,6 +29,7 @@ export const Projects = ({ activeValue = true }) => {
             setActive(project.projectId);
             setSelectedProject(project.projectId);
           }}
+          tabIndex={0}
         >
           <IndividualProject project={project} />
         </li>
