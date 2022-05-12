@@ -11,6 +11,8 @@ export const Tasks = () => {
   const { selectedProject } = useSelectedProjectValue();
   const { projects } = useProjectsValue();
   const { tasks } = useTasks(selectedProject);
+  console.log({tasks})
+  // const tasks = [{id: 1, task: 'Fix the node-sass error on the todoist clone'}]
 
   let projectName = "";
 

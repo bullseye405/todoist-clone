@@ -11,20 +11,20 @@ export const AddProject = ({ shouldShow = false }) => {
   const { projects, setProjects } = useProjectsValue();
 
   const addProject = () => {
-    projectName &&
-      firebase
-        .firestore()
-        .collection("projects")
-        .add({
-          projectId,
-          name: projectName,
-          userId: "asdfghjkl",
-        })
-        .then(() => {
-          setProjects([...projects]);
-          setProjectName("");
-          setShow(false);
-        });
+    // projectName &&
+    //   firebase
+    //     .firestore()
+    //     .collection("projects")
+    //     .add({
+    //       projectId,
+    //       name: projectName,
+    //       userId: "asdfghjkl",
+    //     })
+    //     .then(() => {
+    //       setProjects([...projects]);
+    //       setProjectName("");
+    //       setShow(false);
+    //     });
   };
 
   return (
